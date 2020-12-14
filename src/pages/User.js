@@ -134,7 +134,7 @@ export const User = (props) => {
         setCodCidade(response.data.endereco.codCidade)
         setCidade(response.data.endereco.cidade)
 
-        setDataNascimento(response.data.dataNascimento)
+        setDataNascimento(new Date(response.data.dataNascimento).toISOString().split('T')[0])
         setTelefone(response.data.telefone)
         setNome(response.data.nome)
       }).catch((error) => {
